@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    margin: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+        'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+@layer base {
+    :root {
+        /* Warm artisan palette */
+        --background: 38 40% 97%;
+        --foreground: 24 28% 12%;
+        --card: 0 0% 100%;
+        --card-foreground: 24 28% 12%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 24 28% 12%;
+        --primary: 27 55% 38%;
+        --primary-foreground: 40 40% 98%;
+        --secondary: 34 30% 92%;
+        --secondary-foreground: 24 28% 16%;
+        --muted: 34 25% 93%;
+        --muted-foreground: 28 12% 42%;
+        --accent: 30 45% 90%;
+        --accent-foreground: 27 55% 30%;
+        --destructive: 0 72% 48%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 32 20% 86%;
+        --input: 32 20% 86%;
+        --ring: 27 55% 38%;
+        --radius: 0.75rem;
+    }
+    .dark {
+        --background: 24 30% 7%;
+        --foreground: 40 33% 96%;
+        --card: 24 26% 10%;
+        --card-foreground: 40 33% 96%;
+        --popover: 24 26% 10%;
+        --popover-foreground: 40 33% 96%;
+        --primary: 32 70% 55%;
+        --primary-foreground: 24 30% 8%;
+        --secondary: 24 18% 16%;
+        --secondary-foreground: 40 33% 96%;
+        --muted: 24 16% 15%;
+        --muted-foreground: 34 15% 65%;
+        --accent: 24 20% 18%;
+        --accent-foreground: 32 70% 70%;
+        --destructive: 0 62% 45%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 24 16% 18%;
+        --input: 24 16% 18%;
+        --ring: 32 70% 55%;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+@layer components {
+    .font-display {
+        font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+        font-optical-sizing: auto;
+    }
+    .brand-gradient-text {
+        @apply bg-gradient-to-r from-amber-200 via-amber-100 to-orange-200 bg-clip-text text-transparent;
+    }
+    .eyebrow {
+        @apply text-xs font-semibold uppercase tracking-[0.25em] text-amber-700;
+    }
+    .section-shell {
+        @apply container mx-auto px-4 sm:px-6;
+    }
+}
+
+/* Smooth anchor scrolling with offset for the sticky header */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+@keyframes kenburns {
+    0% { transform: scale(1.08) translateY(0); }
+    100% { transform: scale(1.16) translateY(-1.5%); }
+}
+.animate-kenburns { animation: kenburns 18s ease-out forwards; }
+
+@keyframes rise {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.animate-rise { animation: rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.delay-1 { animation-delay: 0.12s; }
+.delay-2 { animation-delay: 0.24s; }
+.delay-3 { animation-delay: 0.36s; }

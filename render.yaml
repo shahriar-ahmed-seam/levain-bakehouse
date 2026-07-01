@@ -1,0 +1,22 @@
+# Render blueprint for the Levain FastAPI backend.
+# Deploy: push to GitHub, then in Render → New → Blueprint, point at this repo.
+# Set MONGO_URL (MongoDB Atlas connection string) and CORS_ORIGINS in the
+# Render dashboard as environment variables.
+services:
+  - type: web
+    name: levain-api
+    runtime: python
+    rootDir: backend
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "uvicorn server:app --host 0.0.0.0 --port $PORT"
+    healthCheckPath: /api/health
+    envVars:
+      - key: DB_NAME
+        value: levain
+      - key: CORS_ORIGINS
+        value: "*"
+      - key: MONGO_URL
+        sync: false
+      - key: PYTHON_VERSION
+        value: "3.11.9"
