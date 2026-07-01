@@ -6,7 +6,7 @@
 
 Browse a handcrafted menu, build a basket, and order for delivery — with a full-screen cinematic hero and an editorial design system.
 
-[**▶ Live Demo**](https://levain-bakehouse.vercel.app) · [Report a bug](https://github.com/shahriar-ahmed-seam/levain-bakehouse/issues)
+[**▶ Live Demo**](https://frontend-rho-seven-22.vercel.app) · [Report a bug](https://github.com/shahriar-ahmed-seam/levain-bakehouse/issues)
 
 ![React](https://img.shields.io/badge/React-19-61dafb?logo=react&logoColor=black) ![FastAPI](https://img.shields.io/badge/FastAPI-0.115-009688?logo=fastapi&logoColor=white) ![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248?logo=mongodb&logoColor=white) ![License](https://img.shields.io/badge/license-MIT-green)
 
